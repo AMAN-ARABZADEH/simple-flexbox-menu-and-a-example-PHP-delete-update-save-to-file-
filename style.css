@@ -1,0 +1,91 @@
+/*
+===============
+Variables
+
+=================
+*/
+
+/* Use a CSS reset to remove default styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Define variables for colors and font */
+:root {
+  --color-primary: #34495e;
+  --color-secondary: #718daa;
+  --font-primary: "Montserrat", sans-serif;
+}
+
+/* Apply a basic style to the body element */
+body {
+  font-family: var(--font-primary);
+  line-height: 1.6;
+}
+/* Use a class to define the header style */
+.navbar {
+  min-height: 10vh;
+  max-width: 100vw;
+  border: 1px solid #a2a2a2;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Use a class to define a list with no margin or padding */
+li {
+  list-style: none;
+}
+
+/* Use a class to define the color of headings and links */
+h1 {
+  color: var(--color-primary);
+}
+
+/* Use a class to remove underline from links */
+a {
+  text-decoration: none;
+}
+
+/* Use a class to define the logo style */
+.logo {
+  font-size: 1.45em;
+}
+
+/* Use a class to define the main navigation style */
+.main-nav {
+  margin-top: 5px;
+}
+
+/* Use a class to define the style of links in the main navigation */
+.main-nav a {
+  padding: 10px 15px;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  color: var(--color-primary);
+  font-size: 0.99em;
+  transition: color 0.3s ease;
+}
+
+/* Add a hover effect to links in the main navigation */
+.main-nav a:hover {
+  color: var(--color-secondary);
+}
+
+/* Use media queries to adjust the layout on different screen sizes */
+@media (min-width: 789px) {
+  .navbar,
+  .main-nav {
+    display: flex;
+  }
+  .navbar {
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 auto;
+  }
+}
