@@ -12,7 +12,7 @@
   <label for="username">Username:</label>
   <input type="text" id="username" name="username"><br><br>
   <label for="data">Message:</label>
-  <textarea id="data" name="data" rows="10" cols="40"></textarea><br><br>
+  <textarea id="message" name="message" rows="10" cols="40"></textarea><br><br>
   <input type="submit" name="save" value="Save">
   <input type="submit" name="update" value="Update">
   <input type="submit" name="delete" value="Delete">
@@ -26,7 +26,7 @@
 <?php
 if (isset($_POST['save'])) {
   $username = $_POST['username'];
-  $data = $_POST['data'];
+  $data = $_POST['message'];
   
   // Create a new instance of the SerializedData class with the username and data
   $serializedData = new SerializedData($username, $data);
@@ -35,12 +35,12 @@ if (isset($_POST['save'])) {
   $serialized = serialize($serializedData);
   file_put_contents('serializedData.txt', $serialized);
   
-  echo "Data saved successfully.";
+  echo "message saved successfully.";
 }
 
 if (isset($_POST['update'])) {
   $username = $_POST['username'];
-  $data = $_POST['data'];
+  $data = $_POST['message'];
   
   // Read the serialized data from the file and deserialize it
   $serialized = file_get_contents('serializedData.txt');
@@ -53,7 +53,7 @@ if (isset($_POST['update'])) {
   $serialized = serialize($serializedData);
   file_put_contents('serializedData.txt', $serialized);
   
-  echo "Data updated successfully.";
+  echo "message updated successfully.";
 }
 
 if (isset($_POST['delete'])) {
@@ -70,7 +70,7 @@ if (isset($_POST['delete'])) {
   $serialized = serialize($serializedData);
   file_put_contents('serializedData.txt', $serialized);
   
-  echo "Data deleted successfully.";
+  echo "message deleted successfully.";
 }
 
 
